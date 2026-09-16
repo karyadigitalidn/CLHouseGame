@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLHouseGame</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">CL<span>House</span>Game</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#games">Games</a>
+      <a href="#coming-soon">Coming Soon</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="badge">WELCOME TO CLHOUSEGAME</p>
+        <h1>PLAY.<br><span>COMPETE.</span><br>WIN.</h1>
+        <p>Tempat bermain, berkompetisi, dan mendapatkan reward secara GRATIS.</p>
+        <a href="#games" class="hero-button">EXPLORE GAMES ↓</a>
+      </div>
+
+      <div class="hero-card">
+        <div class="circle"></div>
+        <div class="game-icon">🎮</div>
+        <h3>FREE GAME CENTER</h3>
+        <p>Choose your game & start playing.</p>
+      </div>
+    </section>
+
+    <section id="games" class="games-section">
+      <div class="section-title">
+        <p class="small-title">CHOOSE YOUR GAME</p>
+        <h2>Our Games</h2>
+        <p>Main gratis. Pilih permainanmu dan mulai sekarang.</p>
+      </div>
+
+      <div class="game-grid">
+
+        <div class="game-card">
+          <div class="game-number">01</div>
+          <div class="game-emoji">🎮</div>
+          <h3>PS5</h3>
+          <p class="free">GRATIS MAIN</p>
+          <p>Choose game favoritmu dan nikmati pengalaman bermain PS5.</p>
+
+          <button onclick="openPS5()" class="order-button">
+            ORDER NOW
+          </button>
+        </div>
+
+        <div class="game-card">
+          <div class="game-number">02</div>
+          <div class="game-emoji">🎯</div>
+          <h3>DARTS</h3>
+          <p class="free">MAIN GRATIS</p>
+          <p>Uji akurasi lemparanmu dan dapatkan reward menarik.</p>
+
+          <button onclick="openDarts()" class="order-button">
+            ORDER NOW
+          </button>
+        </div>
+
+        <div class="game-card">
+          <div class="game-number">03</div>
+          <div class="game-emoji">🧩</div>
+          <h3>RUBIK COMPETITION</h3>
+          <p class="free">MAIN GRATIS</p>
+          <p>Seberapa cepat kamu bisa menyelesaikan Rubik?</p>
+
+          <button onclick="openRubik()" class="order-button">
+            ORDER NOW
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="coming-soon" class="coming">
+      <p class="small-title">MORE GAMES</p>
+      <h2>COMING SOON 🚀</h2>
+      <p>Game baru sedang dipersiapkan untuk kamu.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <h3>CLHouseGame</h3>
+    <p>Play. Compete. Win.</p>
+    <p class="copyright">© 2026 CLHouseGame</p>
+  </footer>
+
+
+  <!-- PS5 MODAL -->
+  <div id="ps5Modal" class="modal">
+    <div class="modal-box">
+      <button onclick="closeModal('ps5Modal')" class="close">×</button>
+
+      <p class="small-title">PS5 GAME</p>
+      <h2>Choose Your Game</h2>
+
+      <select id="ps5Game">
+        <option value="">-- Choose Game --</option>
+        <option>ROBLOX</option>
+        <option>CYBERPUNK 2077</option>
+        <option>GRAN TURISMO 7</option>
+        <option>NBA 2K26</option>
+        <option>FC26</option>
+        <option>BLOODBORNE</option>
+        <option>ELDEN RING</option>
+        <option>FORZA HORIZON 5</option>
+      </select>
+
+      <input id="ps5Name" type="text" placeholder="ISI NAMA">
+
+      <button onclick="orderPS5()" class="confirm-button">
+        ORDER NOW
+      </button>
+    </div>
+  </div>
+
+
+  <!-- DARTS MODAL -->
+  <div id="dartsModal" class="modal">
+    <div class="modal-box">
+      <button onclick="closeModal('dartsModal')" class="close">×</button>
+
+      <p class="small-title">DARTS GAME</p>
+      <h2>Choose Darts</h2>
+
+      <select id="dartsCount">
+        <option value="">-- Choose Darts --</option>
+        <option>1 DART</option>
+        <option>2 DARTS</option>
+        <option>3 DARTS</option>
+        <option>4 DARTS</option>
+        <option>5 DARTS</option>
+        <option>6 DARTS</option>
+      </select>
+
+      <input id="dartsName" type="text" placeholder="ISI NAMA">
+
+      <div class="info-box">
+        <strong>ZONE SHOOT</strong>
+        <p>0 POIN — ZONK</p>
+        <p>SINGLE — 2 POIN</p>
+        <p>DOUBLE RING — 5 POIN</p>
+        <p>TRIPLE RING — 10 POIN</p>
+        <p>OUTER BULL — 15 POIN</p>
+        <p>BULLSEYE — 30 POIN</p>
+      </div>
+
+      <button onclick="orderDarts()" class="confirm-button">
+        ORDER NOW
+      </button>
+    </div>
+  </div>
+
+
+  <!-- RUBIK MODAL -->
+  <div id="rubikModal" class="modal">
+    <div class="modal-box">
+      <button onclick="closeModal('rubikModal')" class="close">×</button>
+
+      <p class="small-title">RUBIK COMPETITION</p>
+      <h2>Choose Rubik</h2>
+
+      <select id="rubikType">
+        <option value="">-- Choose Rubik --</option>
+        <option>3X3 RUBIK</option>
+        <option>2X2 RUBIK</option>
+        <option>PYRAMIDS RUBIK</option>
+      </select>
+
+      <input id="rubikName" type="text" placeholder="ISI NAMA">
+
+      <div class="info-box">
+        <strong>REWARD</strong>
+        <p>1 MIN+ → PENSIL 1 + Rp 2.000</p>
+        <p>40–59 SEC → PENSIL 1 + Rp 5.000</p>
+        <p>20–39 SEC → PENSIL 2 + Rp 8.000</p>
+        <p>10–19 SEC → PENSIL 3 + Rp 15.000 + PS5</p>
+        <p>0–9 SEC → BEBAS + Rp 20.000 + PS5</p>
+      </div>
+
+      <button onclick="orderRubik()" class="confirm-button">
+        ORDER NOW
+      </button>
+    </div>
+  </div>
+
+
+  <!-- INVOICE -->
+  <div id="invoiceModal" class="modal">
+    <div class="invoice">
+
+      <button onclick="closeModal('invoiceModal')" class="close">
+        ×
+      </button>
+
+      <div class="invoice-header">
+        <p class="small-title">CLHOUSEGAME</p>
+        <h2>INVOICE</h2>
+      </div>
+
+      <div class="invoice-line"></div>
+
+      <div class="invoice-row">
+        <span>Date</span>
+        <strong id="invoiceDate"></strong>
+      </div>
+
+      <div class="invoice-row">
+        <span>Name</span>
+        <strong id="invoiceName"></strong>
+      </div>
+
+      <div class="invoice-row">
+        <span>Game</span>
+        <strong id="invoiceGame"></strong>
+      </div>
+
+      <div class="invoice-row">
+        <span>Chosen</span>
+        <strong id="invoiceChosen"></strong>
+      </div>
+
+      <div class="invoice-total">
+        <span>Payment</span>
+        <strong>Rp 0</strong>
+      </div>
+
+      <div class="success">
+        ✓ ORDER COMPLETED
+        <small>FREE GAME</small>
+      </div>
+
+      <button onclick="closeModal('invoiceModal')" class="confirm-button">
+        DONE
+      </button>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
